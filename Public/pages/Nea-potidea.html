@@ -12,9 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="map.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="../map.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://kit.fontawesome.com/73b021ff64.js" crossorigin="anonymous"></script>
 </head>
 <!------------script Make sure you put this AFTER Leaflet's CSS --------------------------------->
@@ -47,14 +47,14 @@ crossorigin=""></script>
 
     <footer>       
         <ul class="nav">           
-            <a href="chalcidique.html"><li class="button">Carte regional</li></a>
-            <a href="accueil.html"><li class="button">Carte grece</li></a>
+            <a href="../chalcidique.html"><li class="button">Carte regional</li></a>
+            <a href="../../accueil.html"><li class="button">Carte grece</li></a>
             <li ><p id="date"  ></p></li>           
         </ul>
     </footer>
 
 </body>
-<script src="forecastPotidea.js"></script>
+<script src="../js/forecastPotidea.js"></script>
 <script>
     var map = L.map('map').setView([40.195907, 23.334261] , 13);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -63,7 +63,7 @@ crossorigin=""></script>
 }).addTo(map);
 var marker = L.marker([40.195907, 23.334261]).addTo(map);
 </script>
-<script src="date.js"></script>
+<script src="../js/date.js"></script>
 
 
 </html>

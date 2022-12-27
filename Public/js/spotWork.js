@@ -24,6 +24,7 @@ const elementNea = document.querySelector("#region-H9");
 const elementVor = document.querySelector("#region-J11");
 const elementEpa = document.querySelector("#region-D5");
 const elementMind = document.querySelector("#region-D5");
+const elementRiv = document.querySelector('#region-D5');
 
 
 
@@ -33,4 +34,5 @@ isWorking(elementNea, localStorage.getItem('windNea'), 12);
 isWorking(elementVor, localStorage.getItem('windVor'), 12);
 isWorking(elementEpa, localStorage.getItem('windEpa'), 12);
 isWorking(elementMind, localStorage.getItem('windMind'), 12);
+isWorking(elementMind, localStorage.getItem('windRiv'), 12);
   

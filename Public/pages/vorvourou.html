@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epanomi</title>
+    <title>Angelochochi spot</title>
 <!-----------lien pour l'affichege de la carte leaflet-------------------------->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
@@ -12,9 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="map.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="../map.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://kit.fontawesome.com/73b021ff64.js" crossorigin="anonymous"></script>
 </head>
 <!------------script Make sure you put this AFTER Leaflet's CSS --------------------------------->
@@ -22,10 +22,10 @@
 integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
 crossorigin=""></script>
 
-<body> 
+<body>
 
     <header class="div-text-shadow">
-        <h1>Spot epanomi</h1>        
+        <h1>Spot de Vorvorou </h1>        
     </header> 
 
     <br>
@@ -34,37 +34,47 @@ crossorigin=""></script>
         <section>
             <div id="map"></div>                        
         </section>
-
         <section class="info">
             <h2>meteo</h2>
             <div id="forecast"></div>
             <div id="windSpeed"></div>
         </section>
-
+        <p class="info">Marche trés bien en vent de nord, assey profond. Plutot destiné aux bons riders </p>
         <div id="table" class="table-forecast"></div>
-
+        <div
+            data-windywidget="forecast"
+            data-spotid="449018"
+            data-appid="47474b3c97db83a388bcb70bc7673d82">
+        </div>
+        <script async="true" data-cfasync="false" type="text/javascript" src="https://windy.app/widget/windy_forecast_async.js"></script>
+            <div
+            data-windywidget="stats"
+            data-responsive="true"
+            data-horizontal="true"
+            data-spotid="449018"
+            data-appid="290fe1f69ae9df85ae8607b39d42ef38">
+            </div>            
     </main>
 
     <footer class="foot-container">       
         <ul class="nav">           
-            <a href="chalcidique.html"><li class="button">Carte regional</li></a>
-            <a href="kalikrateia.html"><li class="button">klikrateia</li></a>
-            <a href="accueil.html"><li class="button">Carte grece</li></a>
-            <li ><p id="date"  ></p></li>           
+            <a href="../chalcidique.html"><li class="button">Carte regional</li></a>
+            <a href="../../accueil.html"><li class="button">Carte grece</li></a>
+            <li ><p id="date"></p></li>           
         </ul>
     </footer>
+    
 
 </body>
-<script src="forecastEpanomi.js"></script>
+
 <script>
-    var map = L.map('map').setView([40.373962, 22.889219] , 13);
+    var map = L.map('map').setView([40.192850, 23.809156] , 13);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-var marker = L.marker([40.373962, 22.889219]).addTo(map);
-</script>
-<script src="date.js"></script>
-
+var marker = L.marker([40.192850, 23.809156]).addTo(map);</script>
+<script src="../js/date.js"></script>
+<script src="../js/forecastVorvourou.js"></script>
 
 </html>

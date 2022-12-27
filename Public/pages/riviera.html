@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commune de kalikrateia</title>
+    <title>Riviera spot</title>
 <!-----------lien pour l'affichege de la carte leaflet-------------------------->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
@@ -12,9 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="map.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="../map.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://kit.fontawesome.com/73b021ff64.js" crossorigin="anonymous"></script>
 </head>
 <!------------script Make sure you put this AFTER Leaflet's CSS --------------------------------->
@@ -22,55 +22,49 @@
 integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
 crossorigin=""></script>
 
-<body> 
+<body>
 
     <header class="div-text-shadow">
-        <h1>Commune de kalikrateia</h1>        
+        <h1>Spot de riviera </h1>        
     </header> 
 
     <br>
 
     <main>
-        <p class="info">Trois spots dans cette region, cliquez sur le spot pour le liens vers prévision et tips</p>
         <section>
             <div id="map"></div>                        
-        </section>       
+        </section>
+        <section class="info">
+            <h2>meteo</h2>
+            <div id="forecast"></div>
+            <div id="windSpeed"></div>
+        </section>
+        <p class="info">Marche uniquement en vent de sud, peu profond. Attention présence de rocher a fleur d'eau </p>
+        <div id="table" class="table-forecast"></div>
     </main>
 
     <footer class="foot-container">       
-        <ul class="nav">           
-            <a href="./chalcidique.html"><li class="button">Carte regional</li></a>
-            <a href="../accueil.html"><li class="button">Carte grece</li></a>
-            <li ><p id="date"  ></p></li>           
+        <ul class="nav">
+
+            <a href="../kalikrateia.html"><li class="button">klikrateia</li></a>
+            <a href="../chalcidique.html"><li class="button">Carte regional</li></a>
+            <a href="../../accueil.html"><li class="button">Carte grece</li></a>
+            <li ><p id="date"></p></li>           
         </ul>
     </footer>
+    
 
 </body>
 
-<script>
-    var map = L.map('map').setView([40.446883, 22.964185] , 11);
+<script >
+     var map = L.map('map').setView([40.476219, 22.819758] , 14);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-//marker pour angelochochi
-var marker = L.marker([40.494988, 22.817900]).addTo(map);
-//popup
-marker.bindPopup("<a href='pages/angelo.html'>Angelochori</a>").openPopup();
-//marker pour epanomi
-var marker2 = L.marker([40.374742, 22.890661]).addTo(map);
-//popup
-marker2.bindPopup("<a href='pages/epanomi.html'>epanomi</a>").openPopup();
-//marker pour mindloop
-var marker3 = L.marker([40.374048, 22.957411]).addTo(map);
-//popup
-marker3.bindPopup("<a href='pages/mindloop.html'>Mindloop</a>").openPopup();
-//marker pour riviera
-var marker4 = L.marker([40.476137, 22.819931]).addTo(map);
-//popup
-marker4.bindPopup("<a href='pages/riviera.html'>Riviera</a>").openPopup();
+var marker = L.marker([40.476219, 22.819758]).addTo(map);
 </script>
-<script src="./js/date.js"></script>
-
+<script src="../js/date.js"></script>
+<script src="../js/forecastRiviera.js"></script>
 
 </html>
