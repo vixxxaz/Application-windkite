@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nea Potidea spot</title>
+<!-----------lien pour l'affichege de la carte leaflet-------------------------->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/73b021ff64.js" crossorigin="anonymous"></script>
+</head>
+<!------------script Make sure you put this AFTER Leaflet's CSS --------------------------------->
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+crossorigin=""></script>
+
+<body> 
+
+    <header class="div-text-shadow">
+        <h1>Spot de nea potidea</h1>        
+    </header> 
+
+    <br>
+
+    <main>
+        <section>
+            <div id="map"></div>                        
+        </section>
+
+        <section class="info">
+            <h2>meteo</h2>
+            <div id="forecast"></div>
+            <div id="windSpeed"></div>
+        </section>
+
+        <div id="table" class="table-forecast"></div>
+
+    </main>
+
+    <footer>       
+        <ul class="nav">           
+            <a href="chalcidique.html"><li class="button">Carte regional</li></a>
+            <a href="accueil.html"><li class="button">Carte grece</li></a>
+            <li ><p id="date"  ></p></li>           
+        </ul>
+    </footer>
+
+</body>
+<script src="forecastPotidea.js"></script>
+<script>
+    var map = L.map('map').setView([40.195907, 23.334261] , 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+var marker = L.marker([40.195907, 23.334261]).addTo(map);
+</script>
+<script src="date.js"></script>
+
+
+</html>

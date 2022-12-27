@@ -1,0 +1,10 @@
+#map{
+    height: 400px;
+    border: 12px outset rgba(28,110,164,0.88);
+    border-radius: 11px;
+}
+
+.rose{
+    color: black;
+
+}
