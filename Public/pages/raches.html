@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epanomi</title>
+    <title>spot de raches</title>
 <!-----------lien pour l'affichege de la carte leaflet-------------------------->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
@@ -25,7 +25,7 @@ crossorigin=""></script>
 <body> 
 
     <header class="div-text-shadow">
-        <h1>Spot epanomi</h1>        
+        <h1>Spot de raches</h1>        
     </header> 
 
     <br>
@@ -45,26 +45,24 @@ crossorigin=""></script>
 
     </main>
 
-    <footer class="foot-container">       
+    <footer>       
         <ul class="nav">           
-            <a href="../chalcidique.html"><li class="button">Carte regional</li></a>
-            <a href="../kalikrateia.html"><li class="button">klikrateia</li></a>
             <a href="../../index.html"><li class="button">Carte grece</li></a>
             <li ><p id="date"  ></p></li>           
         </ul>
     </footer>
 
 </body>
-<script src="../js/forecastEpanomi.js"></script>
+<script src="../js/forecastPotidea.js"></script>
 <script>
-    var map = L.map('map').setView([40.373962, 22.889219] , 13);
+    var map = L.map('map').setView([38.868178, 22.758193] , 13);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-var marker = L.marker([40.373962, 22.889219]).addTo(map);
+var marker = L.marker([38.868178, 22.758193]).addTo(map);
 </script>
-<script src="date.js"></script>
+<script src="../js/date.js"></script>
 
 
 </html>
