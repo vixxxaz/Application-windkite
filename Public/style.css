@@ -17,7 +17,7 @@ body{
     text-align: center;
     font-size: larger;
     color:#130866;
-    margin-left: 30px;
+
 }
 
 .div-text-shadow{
@@ -63,6 +63,7 @@ p{
     justify-content: space-around;
     width: 50%;
 }
+
 /* carte de l accueil grece*/
 .map__image{
     border: 12px outset rgba(28,110,164,0.88);
@@ -193,4 +194,13 @@ text-align: center;
 
 tbody, td, th {
     border: 2px solid rgb(2, 13, 132);
+}
+
+@media screen and (max-width: 768px) {
+    .svg-map{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+    }
 }

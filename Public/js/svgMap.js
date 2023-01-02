@@ -1,44 +1,39 @@
-//carte de la grece
+//rend la carte svg de l accueil interactive
+
 
 const map = document.querySelector('#map');
-
 const paths = map.querySelectorAll('.map__image a');
-console.log(paths)
 const links = map.querySelectorAll('.map__list a');
 
+const activeArea = id => {
+  map.querySelectorAll('.is-active').forEach(item => item.classList.remove('is-active'));
+  if (id) {
+    document.querySelector(`#list-${id}`).classList.add('is-active');
+    document.querySelector(`#region-${id}`).classList.add('is-active');
+  }
+};
 
-//poyfill pour foreatch accessible partout
-if (NodeList.prototype.forEach === undefined){
-    NodeList.prototype.forEach = function (callback) {
-        [].forEach.call(this, callback)
-    }
-}
+paths.forEach(path => {
+  path.addEventListener('mouseenter', () => {
+    const id = path.id.replace('region-', '');
+    activeArea(id);
+  });
+  path.addEventListener('touchstart', () => {
+    const id = path.id.replace('region-', '');
+    activeArea(id);
+  });
+});
 
-const activeArea = function (id) {
-    map.querySelectorAll('.is-active').forEach(function (item) {
-        item.classList.remove('is-active')
-    })
-    if(id){
-        document.querySelector("#list-" + id).classList.add('is-active');
-        document.querySelector("#region-" + id).classList.add('is-active');  
-    }    
-}
+links.forEach(link => {
+  link.addEventListener('mouseenter', () => {
+    const id = link.id.replace('list-', '');
+    activeArea(id);
+  });
+  link.addEventListener('touchstart', () => {
+    const id = link.id.replace('list-', '');
+    activeArea(id);
+  });
+});
 
-paths.forEach(function (path) {
-    path.addEventListener('mouseenter', function () {
-        var id = this.id.replace('region-', '');
-        activeArea(id)       
-    })
-})
-
-links.forEach(function (link) {
-    link.addEventListener('mouseenter' , function () {
-        var id = this.id.replace('list-', '')
-        activeArea(id)
-    })
-})
-
-map.addEventListener('mouseover', function () {
-    activeArea()
-})
-
+map.addEventListener('mouseover', () => activeArea());
+map.addEventListener('touchend', () => activeArea());
