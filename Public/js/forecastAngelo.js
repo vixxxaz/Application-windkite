@@ -25,7 +25,7 @@ function weatherDisplay(data) {
     localStorage.setItem('wind',txtWind0);
 
     let speed = document.createElement('p');
-    document.getElementById('windSpeed').appendChild(speed).innerHTML = 'vent aujourd\'hui a 10m : ' + txtWind0 + ' knts' 
+    document.getElementById('windSpeed').appendChild(speed).innerHTML = 'Wind today at 10m altitude : ' + txtWind0 + ' knts' 
 
     let html ='<table><tr><th>Date</th><th>Sunrise</th><th>Sunset</th><th>Max Wind Speed</th><th>Max Wind Gusts</th><th>Dominant Wind Direction in °</th></tr>';
 

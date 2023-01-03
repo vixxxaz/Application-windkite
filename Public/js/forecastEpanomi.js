@@ -25,7 +25,7 @@ const txtWind0 = windGustArray.windspeed_10m_max[0]
 localStorage.setItem('windEpa', txtWind0  )
 
 let speed = document.createElement('p');
-document.getElementById('windSpeed').appendChild(speed).innerHTML = 'vent aujourd\'hui a 10m : ' + txtWind0 + ' knts'
+document.getElementById('windSpeed').appendChild(speed).innerHTML = 'Wind today at 10m altitude : ' + txtWind0 + ' knts'
 
 //creer le tableau pour afficher les données
 let html ='<table><tr><th>Date</th><th>Sunrise</th><th>Sunset</th><th>Max Wind Speed</th><th>Max Wind Gusts</th><th>Dominant Wind Direction in °</th></tr>';

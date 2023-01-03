@@ -18,7 +18,7 @@ paths.forEach(path => {
     const id = path.id.replace('region-', '');
     activeArea(id);
   });
-  path.addEventListener('touchstart', () => {
+  path.addEventListener('touchstart',{passive: true}, () => {
     const id = path.id.replace('region-', '');
     activeArea(id);
   });
@@ -29,11 +29,11 @@ links.forEach(link => {
     const id = link.id.replace('list-', '');
     activeArea(id);
   });
-  link.addEventListener('touchstart', () => {
+  link.addEventListener('touchstart', {passive: true}, () => {
     const id = link.id.replace('list-', '');
     activeArea(id);
   });
 });
 
 map.addEventListener('mouseover', () => activeArea());
-map.addEventListener('touchend', () => activeArea());
+map.addEventListener('touchend',{passive: true}, () => activeArea());

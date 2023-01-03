@@ -53,6 +53,7 @@ a {
 
 h1, h2{
     font-family: 'Zen Dots', cursive;
+    color: #fff;
 }
 
 p{
@@ -100,10 +101,9 @@ p{
 }
 
 .map__list a{
-    color: inherit;
+    color: #fff;
     text-decoration: none;
     transition: color 0.2s;
- 
 }
 
 .map__list a.is-active {
@@ -115,10 +115,10 @@ p{
 
 
 /* carte de region chalcidique*/
-
+/* 
 .mapCha__image{
     border: 12px outset rgba(28,110,164,0.88);
-    }
+    } */
 
 .mapCha__image path{
     fill: #1094a0;
@@ -202,7 +202,7 @@ text-align: center;
 }
 
 tbody, td, th {
-    border-radius: 5px;
+    border-radius: 20px;
     border: 1px solid rgb(2, 13, 132);
 }
 

@@ -16,7 +16,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 var marker = L.marker([40.494988, 22.817900]).addTo(map);
 
 //popup du marker
-marker.bindPopup("<b>Plage de decollage</b><br> kite cotes mer.").openPopup();
+marker.bindPopup("<b>Launching area</b><br> put kitesurf on sea side.").openPopup();
 
 //ajout de la zone de kite
 var polygon = L.polygon([
@@ -30,7 +30,7 @@ var polygon = L.polygon([
 var north = L.control({position: "bottomright"});
 north.onAdd = function(map) {
     var div = L.DomUtil.create("div", "info legend rose");
-    div.innerHTML = '<img src="./assets/rose2.png">';
+    div.innerHTML = '<img src="../assets/rose2.png" alt="rose des vent">';
     return div;
 }
 north.addTo(map);
